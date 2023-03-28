@@ -24,6 +24,10 @@
             text-decoration: none;
             color: inherit;
         }
+        button{
+            border: none;
+            background-color: white;
+        }
         h2{
             font-size: 1.2rem;
             font-weight: normal;
@@ -35,6 +39,35 @@
             width: 25px;
             height: 25px;
             object-fit: cover;
+        }
+        .search{
+            position: absolute;
+            width: 300px;
+            height: 350px;
+            .top{
+                height: 30%;
+                border: 1px solid grey;
+                background-color: lightblue;
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+                position: relative;
+                input{
+                    width: 90%;
+                    border-radius: 10px;
+                }
+                svg{
+                    position: absolute;
+                    right: 0;
+                    width: 10px;
+                    height: 10px;
+                    object-fit: cover;
+                    color: grey;
+                }
+            }
+            .bottom{
+
+            }
         }
     }
     .bottom{

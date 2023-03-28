@@ -18,6 +18,7 @@ import Send from "../Assets/send.png"
 import { Link } from "react-router-dom"
 import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
 import { useState } from "react"
+import { ClearRounded } from "@mui/icons-material"
 const Sidebar = ()=>{
     const [menuStatus, setMenuStatus] = useState(false)
     return(
@@ -31,12 +32,35 @@ const Sidebar = ()=>{
             <Link to="/">
             <SideElement title = "Home" img = {Home}/>
             </Link>
+            <button onClick={()=>{alert("hello")}}>
             <SideElement title = "Search" img = {Search}/>
+            <div className="search">
+                <div className="top">
+                    <h3>Search</h3>
+                    <input type="text" placeholder="search"/>
+                    <ClearRounded/>
+                </div>
+                <hr/>
+                <div className="bottom">
+                    <span>resent</span>
+                </div>
+            </div>
+            </button>
+            <button>
             <SideElement title = "Explore" img = {Explore}/>
+            </button>
+            <button>
             <SideElement title = "Reel" img = {Reel}/>
+            </button>
+            <button>
             <SideElement title = "Send" img = {Send}/>
+            </button>
+            <button>
             <SideElement title = "Heart" img = {Heart}/>
+            </button>
+            <button>
             <SideElement title = "Create" img = {Create}/>
+            </button>
             <Link to="/single/1">
             <SideElement title = "Profile" img = {Profile}/>
             </Link>

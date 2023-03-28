@@ -50,6 +50,14 @@ function App() {
       path: "/single/:id",
       element: <SingleLayout><Single/></SingleLayout>
     },
+    {
+      path: "/single/explore",
+      element: <SingleLayout><Single/></SingleLayout>
+    },
+    {
+      path: "/single/reel",
+      element: <SingleLayout><Single/></SingleLayout>
+    },
   ])
   return (
     <RouterProvider router = {router}/>

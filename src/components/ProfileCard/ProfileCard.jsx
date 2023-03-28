@@ -1,20 +1,19 @@
 import "./profileCard.scss"
-import Post1 from "../Assets/bedroom.jpg"
 import React from 'react'
 import { Favorite, ModeCommentRounded } from "@mui/icons-material"
 
-function ProfileCard() {
+function ProfileCard(props) {
   return (
     <div className="profileCard">
-        <img src={Post1} alt="bedroom"/>
+        <img src={props.img} alt="bedroom"/>
         <div className="post-reaction">
             <div className="like">
             <Favorite/>
-            <span>2000</span>
+            <span>{props.like}</span>
             </div>
             <div className="comment">
             <ModeCommentRounded/>
-            <span>500</span>
+            <span>{props.comment}</span>
             </div>
         </div>
     </div>
