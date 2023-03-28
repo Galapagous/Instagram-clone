@@ -1,0 +1,7 @@
+.main-container{
+    .outlet-container{
+        &::-webkit-scrollbar{
+            width: 1px;
+        }
+    }
+}
