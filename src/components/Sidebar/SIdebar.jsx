@@ -18,10 +18,12 @@ import Send from "../Assets/send.png"
 import { Link } from "react-router-dom"
 import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
 import { useState } from "react"
-import { ClearRounded } from "@mui/icons-material"
+import { ClearRounded, CollectionsRounded, FavoriteBorder, Filter1Rounded } from "@mui/icons-material"
 const Sidebar = ()=>{
     const [menuStatus, setMenuStatus] = useState(false)
     const [searchBox, setSearchBox] = useState(false)
+    const [notifyBox, setNotifyBox] = useState(false)
+    const [createPost, setCreatePost] = useState(false)
     return(
         <div className="sidebar">
             <div className="top">
@@ -56,18 +58,41 @@ const Sidebar = ()=>{
             <Link to="/single/message/1">
             <SideElement title = "Send" img = {Send}/>
             </Link>
-            <button>
+            <button onClick={()=>{setNotifyBox(!notifyBox)}}>
             <SideElement title = "Notifications" img = {Heart}/>
             </button>
-            <div className="notify">
+            {notifyBox && <div className="notify">
                 <div className="top">
                     <h3>Notifications</h3>
+                    <div className="svg-cover">
+                    <FavoriteBorder/>
+                    </div>
+                    <span>Activities on your Posts</span>
+                    <span>When someone likes or comment on one of your post, you'll see it here</span>
                 </div>
-                <div className="bottom"></div>
-            </div>
-            <button>
+                <div className="bottom">
+                    <span>Suggestions for you</span>
+                    
+                </div>
+            </div>}
+            <button onClick={()=>{setCreatePost(!createPost)}}>
             <SideElement title = "Create" img = {Create}/>
             </button>
+            {createPost && <div className="create">
+                <button onClick={()=>{setCreatePost(!createPost)}}>
+                <ClearRounded/>
+                </button>
+                <div className="create-block">
+                    <div className="title">
+                    <span>Create new post</span>
+                    </div>
+                    <div className="upload">
+                    <label for="file-input">{<CollectionsRounded/>}</label>
+                    <input id="file-input" type="file"/>
+                    <span>Drag photos and videos here</span>
+                    </div>
+                </div>
+            </div>}
             <Link to="/single/1">
             <SideElement title = "Profile" img = {Profile}/>
             </Link>
