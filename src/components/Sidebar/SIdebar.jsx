@@ -21,6 +21,7 @@ import { useState } from "react"
 import { ClearRounded } from "@mui/icons-material"
 const Sidebar = ()=>{
     const [menuStatus, setMenuStatus] = useState(false)
+    const [searchBox, setSearchBox] = useState(false)
     return(
         <div className="sidebar">
             <div className="top">
@@ -32,9 +33,10 @@ const Sidebar = ()=>{
             <Link to="/">
             <SideElement title = "Home" img = {Home}/>
             </Link>
-            <button onClick={()=>{alert("hello")}}>
+            <button onClick={()=>{setSearchBox(!searchBox)}}>
             <SideElement title = "Search" img = {Search}/>
-            <div className="search">
+            </button>
+            {searchBox && <div className="search">
                 <div className="top">
                     <h3>Search</h3>
                     <input type="text" placeholder="search"/>
@@ -42,22 +44,27 @@ const Sidebar = ()=>{
                 </div>
                 <hr/>
                 <div className="bottom">
-                    <span>resent</span>
+                    <span>Resent</span>
                 </div>
-            </div>
-            </button>
-            <button>
+            </div>}
+            <Link to="/single/explore">
             <SideElement title = "Explore" img = {Explore}/>
-            </button>
-            <button>
+            </Link>    
+            <Link to="/single/reel">
             <SideElement title = "Reel" img = {Reel}/>
-            </button>
-            <button>
+            </Link>
+            <Link to="/single/message/1">
             <SideElement title = "Send" img = {Send}/>
-            </button>
+            </Link>
             <button>
-            <SideElement title = "Heart" img = {Heart}/>
+            <SideElement title = "Notifications" img = {Heart}/>
             </button>
+            <div className="notify">
+                <div className="top">
+                    <h3>Notifications</h3>
+                </div>
+                <div className="bottom"></div>
+            </div>
             <button>
             <SideElement title = "Create" img = {Create}/>
             </button>

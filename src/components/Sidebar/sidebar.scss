@@ -42,31 +42,55 @@
         }
         .search{
             position: absolute;
+            top: 19%;
+            left: 15%;
             width: 300px;
-            height: 350px;
+            padding: 10px;
+            height: 100%;
+            border-radius: 0px 10px 10px 0px;
+            z-index: 2;
+            background-color: white;
+            color: black;
+            border-left: 1px solid grey;
+            box-shadow: 2px 3px 2px 2px grey;
             .top{
+                position: relative;
                 height: 30%;
-                border: 1px solid grey;
-                background-color: lightblue;
                 display: flex;
                 align-items: start;
                 flex-direction: column;
+                gap: 20px;
                 position: relative;
                 input{
                     width: 90%;
                     border-radius: 10px;
+                    height: 30px;
+                    border: 1px solid grey;
+                    padding-left: 10px;
                 }
                 svg{
                     position: absolute;
                     right: 0;
-                    width: 10px;
-                    height: 10px;
+                    width: 15px;
+                    height: 15px;
+                    color: black;
+                    cursor: pointer;
                     object-fit: cover;
                     color: grey;
+                    position: absolute;
+                    right: 8%;
+                    top: 37%;
                 }
             }
             .bottom{
-
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                span{
+                    text-align: center;
+                    font-weight: 600;
+                }
             }
         }
     }

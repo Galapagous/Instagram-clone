@@ -4,6 +4,9 @@ import Single from './Pages/Single/Single';
 import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom"
 import Sidebar from './components/Sidebar/SIdebar';
 import RightBar from "./components/RightBar/RightBar";
+import Explore from "./Pages/Explore/Explore";
+import Reels from "./Pages/Reels/Reels";
+import Message from "./Pages/Message/Message";
 
 const Layout = ()=>{
   return(
@@ -52,11 +55,15 @@ function App() {
     },
     {
       path: "/single/explore",
-      element: <SingleLayout><Single/></SingleLayout>
+      element: <SingleLayout><Explore/></SingleLayout>
     },
     {
       path: "/single/reel",
-      element: <SingleLayout><Single/></SingleLayout>
+      element: <SingleLayout><Reels/></SingleLayout>
+    },
+    {
+      path: "/single/message/:id",
+      element: <SingleLayout><Message/></SingleLayout>
     },
   ])
   return (
