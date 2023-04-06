@@ -212,6 +212,10 @@
             gap: 10px;
             background-color: white;
             z-index: 2;
+            a{
+                text-decoration: none;
+                color: black;
+            }
             .element-container{
                 flex-direction: row;
                 padding: 7px 0px;

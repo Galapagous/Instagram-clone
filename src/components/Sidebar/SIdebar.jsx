@@ -16,9 +16,9 @@ import Bookmark from "../Assets/bookmark.png"
 import Important from "../Assets/important.png"
 import Send from "../Assets/send.png"
 import { Link } from "react-router-dom"
-import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
+// import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
 import { useState } from "react"
-import { ClearRounded, CollectionsRounded, FavoriteBorder, Filter1Rounded } from "@mui/icons-material"
+import { ClearRounded, CollectionsRounded, FavoriteBorder } from "@mui/icons-material"
 const Sidebar = ()=>{
     const [menuStatus, setMenuStatus] = useState(false)
     const [searchBox, setSearchBox] = useState(false)
@@ -102,7 +102,9 @@ const Sidebar = ()=>{
                 <SideElement title = "Menu" img = {Menu}/>
                 </button>
                     {menuStatus && <div className="menu-display">
+                    <Link to="/single/edit/2">
                 <SideElement title="Settings" img = {Settings}/>
+                    </Link>
                 <SideElement title="Your activity" img = {Time}/>
                 <SideElement title="Saved" img = {Bookmark}/>
                 <SideElement title="Switch appearance" img = {Moon}/>
