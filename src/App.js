@@ -7,6 +7,7 @@ import RightBar from "./components/RightBar/RightBar";
 import Explore from "./Pages/Explore/Explore";
 import Reels from "./Pages/Reels/Reels";
 import Message from "./Pages/Message/Message";
+import Settings from "./Pages/Settings/Settings"
 
 const Layout = ()=>{
   return(
@@ -64,6 +65,10 @@ function App() {
     {
       path: "/single/message/:id",
       element: <SingleLayout><Message/></SingleLayout>
+    },
+    {
+      path: "/single/edit/:id",
+      element: <SingleLayout><Settings/></SingleLayout>
     },
   ])
   return (
