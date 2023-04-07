@@ -1,0 +1,65 @@
+.message-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .message{
+        width: 90%;
+        height: 90vh;
+        border: 1px solid grey;
+        display: flex;
+        align-items: center;
+        .left{
+            flex: 1;
+            height: 100%;
+            border-right: 1px solid grey;
+            .top{
+                display: flex;
+                align-items: end;
+                justify-content: center;
+                gap: 30px;
+                padding: 10px;
+                border: 1px solid grey;
+                .inner{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+                svg{
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                }
+            }
+            .bottom{
+                padding: 20px;
+                color: grey;
+            }
+        }
+        .right{
+            flex: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            svg{
+                width: 100px;
+                height: 100%;
+                border: 2px solid grey;
+                border-radius: 50%;
+                padding: 10px;
+            }
+            button{
+                padding: 5px;
+                background-color: rgb(0, 183, 255);
+                color: white;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}

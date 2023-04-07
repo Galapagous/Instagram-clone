@@ -56,7 +56,7 @@ const Sidebar = ()=>{
             <SideElement title = "Reel" img = {Reel}/>
             </Link>
             <Link to="/single/message/1">
-            <SideElement title = "Send" img = {Send}/>
+            <SideElement title = "Messages" img = {Send}/>
             </Link>
             <button onClick={()=>{setNotifyBox(!notifyBox)}}>
             <SideElement title = "Notifications" img = {Heart}/>
