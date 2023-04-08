@@ -3,8 +3,12 @@ import "./settings.scss"
 import { Link } from "react-router-dom"
 import Dodge from "../../components/Assets/dodge.jpg"
 import SideElement from "../../components/SideElement/SideElement"
+import Edit from "../../components/Edit/Edit"
+import { useState } from "react"
+import Password from "../../components/Password/Password"
 
 const Settings = ()=>{
+  const [view, setView] = useState("edit")
   return(
     <div className="settings-container">
       <div className="settings">
@@ -17,11 +21,10 @@ const Settings = ()=>{
           <h3>Soon, Accounts Center will be the primary place to manage your account info and settings.</h3>
           <hr/>
           <div className="bottom-links">
-            <Link to="#">Edit</Link>
-            <Link to="#">Change password</Link>
-            <Link to="#">Email from instagram</Link>
-            <Link to="#">Adds</Link>
-            <Link to="#">Help</Link>
+            <button onClick={()=>{setView("edit")}}>Edit</button>
+            <button onClick={()=>{setView("password")}}>Change password</button>
+            <button>Adds</button>
+            <button>Help</button>
           </div>
           <hr/>
           <div className="bottom-element">
@@ -37,7 +40,10 @@ const Settings = ()=>{
         </div>
         <div className="right-settings">
           <SideElement title = "Galapagous" mini = "change your profile picture" img={Dodge}/>
-          
+          <div className="change">
+            {view === "edit" && <Edit/>}
+            {view === "password" && <Password/>}
+          </div>
         </div>
       </div>
     </div>
