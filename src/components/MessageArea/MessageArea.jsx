@@ -2,7 +2,7 @@ import React from 'react'
 import "./messageArea.scss"
 import SideElement from '../SideElement/SideElement'
 import Musa from "../Assets/musa2.jpg"
-import { Call, EmojiEmotions, VideoCall } from '@mui/icons-material'
+import { Call, EmojiEmotions, TagFaces, VideoCall } from '@mui/icons-material'
 
 
 function MessageArea() {
@@ -40,7 +40,7 @@ function MessageArea() {
         </div>
         <div className='bottom-chat'>
         <input type='text'/>
-        <EmojiEmotions style={{width: "20px", height: "20px", cursor: "pointer"}}/>
+        <TagFaces style={{width: "20px", height: "20px", cursor: "pointer"}}/>
         </div>
     </div>
   )
