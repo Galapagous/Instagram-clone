@@ -7,8 +7,8 @@ import Explore from "../Assets/explore-vid.mp4"
 const ExploreData = [
     {
         id: 1,
-        type: "combineImage",
-        data: [Export1, Export2, Export3],
+        type: "image",
+        data: Export2,
         likes: 200,
         comments: 10
     },
