@@ -1,4 +1,4 @@
-import { ArrowDownward, EditOutlined, KeyboardArrowDown, SendOutlined } from '@mui/icons-material'
+import { EditOutlined, KeyboardArrowDown, SendOutlined } from '@mui/icons-material'
 import React, { useState } from 'react'
 import "./message.scss"
 import SideElement from '../../components/SideElement/SideElement'

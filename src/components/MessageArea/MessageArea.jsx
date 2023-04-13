@@ -2,7 +2,7 @@ import React from 'react'
 import "./messageArea.scss"
 import SideElement from '../SideElement/SideElement'
 import Musa from "../Assets/musa2.jpg"
-import { Call, EmojiEmotions, TagFaces, VideoCall } from '@mui/icons-material'
+import { Call, TagFaces, VideoCall } from '@mui/icons-material'
 
 
 function MessageArea() {

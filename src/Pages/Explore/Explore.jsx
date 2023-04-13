@@ -17,7 +17,7 @@ function Explore() {
     <div div className='explore-container'>
       {ExploreData.map(each_data=>{
         return(<div key={each_data.id} className='explore-item'>
-            {(each_data.type === "image" && <img src={each_data.data} alt='post view'/> || (each_data.type === "video" && <video src={each_data.data} width="300" height="350" controls={true} autoplay={true} />) || (each_data.type === "combineImage" && <img src={each_data.data[2]} alt='post view'/>))}
+            {((each_data.type === "image") && (<img src={each_data.data} alt='post view'/>) || ((each_data.type === "video") && (<video src={each_data.data} width="300" height="350" controls={true} autoplay={true} />)) || ((each_data.type === "combineImage") && (<img src={each_data.data[2]} alt='post view'/>)))}
               <div className='logo'>
                 {each_data.type === "combineImage" && <BrowseGalleryRounded/>}
                 {each_data.type === "video" && <VideoFile/>}

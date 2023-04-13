@@ -23,8 +23,13 @@ const Sidebar = ()=>{
     const [searchBox, setSearchBox] = useState(false)
     const [notifyBox, setNotifyBox] = useState(false)
     const [createPost, setCreatePost] = useState(false)
+    const handleDefault = ()=>{
+        notifyBox && setNotifyBox(false)
+        searchBox && setSearchBox(false)
+        menuStatus && setMenuStatus(false)
+    }
     return(
-        <div className="sidebar">
+        <div className="sidebar" onClick={handleDefault}>
             <div className="top">
                 <Link to = "/">
                 <img src={Insta} alt="instagram logo"/>

@@ -1,7 +1,7 @@
 import Export1 from "../Assets/explore-1.jpg"
 import Export2 from "../Assets/explore-2.jpg"
 import Export3 from "../Assets/explore-3.jpg"
-import Export4 from "../Assets/food22.jpg"
+// import Export4 from "../Assets/food22.jpg"
 import Explore from "../Assets/explore-vid.mp4"
 
 const ExploreData = [

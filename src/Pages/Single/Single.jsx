@@ -9,7 +9,9 @@ import Post4 from "../../components/Assets/dodge.jpg"
 import Post5 from "../../components/Assets/home.jpg"
 import Post6 from "../../components/Assets/food.jpg"
 import Post7 from "../../components/Assets/food22.jpg"
+import { useState } from "react"
 const Single = ()=>{
+    const [view, setView] = useState("Post")
     return(
         <div className="container">
             <div className="top-area">
@@ -36,35 +38,41 @@ const Single = ()=>{
             <hr/>
             <div className="bottom-area">
                 <div className="top">
-                    <div className="item-status">
+                    <div className="item-status" onClick={()=>{setView("Post")}}>
                     <ItemCard logo={Apps} title = "POST"/>
                     </div>
-                    <div className="item-status">
-                    <ItemCard logo={Bookmark} title = "REELS"/>
+                    <div className="item-status" onClick={()=>{setView("Saved")}}>
+                    <ItemCard logo={Bookmark} title = "SAVED"/>
                     </div>
-                    <div className="item-status">
+                    <div className="item-status" onClick={()=>{setView("Tagged")}}>
                     <ItemCard logo={PersonAddAlt} title = "TAGGED"/>
                     </div>
                 </div>
                 <div className="bottom">
+                {view === "Post" && <div className="my-post">
                     <div className="posts">
                         <ProfileCard img={Post4} like = "3500" comment = "1500"/>
                         <ProfileCard img={Post1} like = "3000" comment = "1000"/>
                         <ProfileCard img={Post2} like = "2000" comment = "500"/>
                         <ProfileCard img={Post3} like = "1000" comment = "250"/>
                     </div>
+                </div>}
+                {view === "Saved" && <div className="saved-post">
                     <div className="saved">
                         <ProfileCard img={Post4} like = "3500" comment = "1500"/>
                         <ProfileCard img={Post5} like = "3000" comment = "1000"/>
                         <ProfileCard img={Post2} like = "2000" comment = "500"/>
                         <ProfileCard img={Post6} like = "1000" comment = "250"/>
                     </div>
+                </div>}
+                {view === "Tagged" && <div className="tagged-post">
                     <div className="tagged">
                         <ProfileCard img={Post4} like = "3500" comment = "1500"/>
                         <ProfileCard img={Post5} like = "3000" comment = "1000"/>
                         <ProfileCard img={Post2} like = "2000" comment = "500"/>
                         <ProfileCard img={Post7} like = "1000" comment = "250"/>
                     </div>
+                </div>}
                 </div>
             </div>
         </div>
