@@ -16,7 +16,6 @@ import Bookmark from "../Assets/bookmark.png"
 import Important from "../Assets/important.png"
 import Send from "../Assets/send.png"
 import { Link } from "react-router-dom"
-// import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
 import { useState } from "react"
 import { ClearRounded, CollectionsRounded, FavoriteBorder } from "@mui/icons-material"
 const Sidebar = ()=>{

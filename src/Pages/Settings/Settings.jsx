@@ -3,6 +3,7 @@ import "./settings.scss"
 import { Link } from "react-router-dom"
 import Dodge from "../../components/Assets/dodge.jpg"
 import SideElement from "../../components/SideElement/SideElement"
+import InputField from "../../components/InputField/InputField"
 
 const Settings = ()=>{
   return(
@@ -37,7 +38,17 @@ const Settings = ()=>{
         </div>
         <div className="right-settings">
           <SideElement title = "Galapagous" mini = "change your profile picture" img={Dodge}/>
-          
+          <div className="input-area">
+          <form>
+            <InputField placeholder= "Muhammed Musa" title="Name" desc="Help people discover your account by using the name you're known by: either your full name, nickname, or business name.
+              You can only change your name twice within 14 days."/>
+            <InputField placeholder= "Galapagous 01" title="Username" desc="In most cases, you'll be able to change your username back to galapagous01 for another 14 days."/>
+            <InputField placeholder= "galapagous09@gmail.com" title="Email" desc=""/>
+            <InputField placeholder= "81 232 803 94" title="Phone Number" desc=""/>
+            <InputField placeholder= "Male" title="Gender" desc=""/>
+            <button>Submit</button>
+          </form>
+          </div>
         </div>
       </div>
     </div>
