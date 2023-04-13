@@ -1,5 +1,5 @@
 .settings-container{
-  padding: 2rem 10rem;
+  padding: 2rem 6rem;
   .settings{
     border: 1px solid black;
     display: flex;
@@ -36,10 +36,12 @@
         flex-direction: column;
         justify-content: flex-start;
         gap: 20px;
-        a{
+        button{
           text-decoration: none;
           color: black;
-          font-size: 1.2rem;
+          font-size: 1rem;
+          background-color: transparent;
+          border: none;
           &:hover{
             color: rgb(109, 184, 235);
           }
@@ -75,6 +77,7 @@
     .right-settings{
       flex: 3;
       display: flex;
+      flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
       flex-direction: column;
@@ -89,6 +92,45 @@
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
+          }
+        }
+      }
+      .change{
+        .input-container{
+          padding: 1rem 0rem;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          .input{
+            display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+          h3{
+            width: 100px;
+          }
+          input{
+            height: 1.3rem;
+            outline: none;
+          }
+          }
+          p{
+            color: grey;
+          }
+        }
+        button{
+          background-color: rgb(4, 58, 88);
+          color: white;
+          font-weight: 600;
+          padding: 5px 10px;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+          &:hover{
+            border: 1px solid rgb(4, 58, 88);
+            background-color: white;
+            color: rgb(4, 58, 88);
           }
         }
       }

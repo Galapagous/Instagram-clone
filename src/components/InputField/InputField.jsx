@@ -3,8 +3,8 @@ const InputField = (props)=>{
   return(
     <div className="input-container">
     <div className="input">
-      <input type="text" placeholder={props.placeholder || ""} />
       <h3>{props.title}</h3>
+      <input type="text" placeholder={props.placeholder || ""} />
     </div>
       <p>{props.desc}</p>
     </div>
