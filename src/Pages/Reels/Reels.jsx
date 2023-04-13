@@ -1,15 +1,16 @@
 import React from 'react'
-import "./reels.scss"
-import TestVid from "../../components/Assets/explore-vid.mp4"
+import ReelElement from '../../components/Reels_Element/ReelElement'
+import reelData from "../../components/Data/reelData"
+
 
 function Reels() {
   return (
-    <div className='reel-container'>
-        {[1,2,3,4,5].map((each_data)=>{
-          return (<div className='test'>
-           <video src={TestVid} width="300" height="350" controls={true} autoPlay={true} />
-          </div>)
-        })}
+    <div>
+      {reelData.map(each_data=>{
+        return(
+          <ReelElement key = {each_data.id} data = {each_data.data} name = {each_data.username} like = {each_data.likes} comment = {each_data.comments}/>
+        )
+      })}
     </div>
   )
 }
