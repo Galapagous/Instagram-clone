@@ -1,0 +1,61 @@
+[1mdiff --cc src/Pages/Settings/Settings.jsx[m
+[1mindex b5f9ba5,26c7bdf..0000000[m
+[1m--- a/src/Pages/Settings/Settings.jsx[m
+[1m+++ b/src/Pages/Settings/Settings.jsx[m
+[36m@@@ -3,9 -3,12 +3,16 @@@[m [mimport "./settings.scss[m
+  import { Link } from "react-router-dom"[m
+  import Dodge from "../../components/Assets/dodge.jpg"[m
+  import SideElement from "../../components/SideElement/SideElement"[m
+[32m++<<<<<<< HEAD[m
+[32m +import InputField from "../../components/InputField/InputField"[m
+[32m++=======[m
+[32m+ import Edit from "../../components/Edit/Edit"[m
+[32m+ import { useState } from "react"[m
+[32m+ import Password from "../../components/Password/Password"[m
+[32m++>>>>>>> 9ecec1985c070b58a3a6bb182ac7a2de43b2f2a1[m
+  [m
+  const Settings = ()=>{[m
+[32m+   const [view, setView] = useState("edit")[m
+    return([m
+      <div className="settings-container">[m
+        <div className="settings">[m
+[36m@@@ -38,16 -40,9 +44,22 @@@[m
+          </div>[m
+          <div className="right-settings">[m
+            <SideElement title = "Galapagous" mini = "change your profile picture" img={Dodge}/>[m
+[32m++<<<<<<< HEAD[m
+[32m +          <div className="input-area">[m
+[32m +          <form>[m
+[32m +            <InputField placeholder= "Muhammed Musa" title="Name" desc="Help people discover your account by using the name you're known by: either your full name, nickname, or business name.[m
+[32m +              You can only change your name twice within 14 days."/>[m
+[32m +            <InputField placeholder= "Galapagous 01" title="Username" desc="In most cases, you'll be able to change your username back to galapagous01 for another 14 days."/>[m
+[32m +            <InputField placeholder= "galapagous09@gmail.com" title="Email" desc=""/>[m
+[32m +            <InputField placeholder= "81 232 803 94" title="Phone Number" desc=""/>[m
+[32m +            <InputField placeholder= "Male" title="Gender" desc=""/>[m
+[32m +            <button>Submit</button>[m
+[32m +          </form>[m
+[32m++=======[m
+[32m+           <div className="change">[m
+[32m+             {view === "edit" && <Edit/>}[m
+[32m+             {view === "password" && <Password/>}[m
+[32m++>>>>>>> 9ecec1985c070b58a3a6bb182ac7a2de43b2f2a1[m
+            </div>[m
+          </div>[m
+        </div>[m
+[1mdiff --cc src/components/InputField/InputField.jsx[m
+[1mindex 6d57e00,1364a47..0000000[m
+[1m--- a/src/components/InputField/InputField.jsx[m
+[1m+++ b/src/components/InputField/InputField.jsx[m
+[36m@@@ -3,8 -3,8 +3,12 @@@[m [mconst InputField = (props)=>[m
+    return([m
+      <div className="input-container">[m
+      <div className="input">[m
+[32m++<<<<<<< HEAD[m
+[32m +      <input type="text" placeholder={props.placeholder || ""} />[m
+[32m++=======[m
+[32m++>>>>>>> 9ecec1985c070b58a3a6bb182ac7a2de43b2f2a1[m
+        <h3>{props.title}</h3>[m
+[32m+       <input type="text" placeholder={props.placeholder || ""} />[m
+      </div>[m
+        <p>{props.desc}</p>[m
+      </div>[m
