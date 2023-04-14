@@ -10,6 +10,7 @@ import Post5 from "../../components/Assets/home.jpg"
 import Post6 from "../../components/Assets/food.jpg"
 import Post7 from "../../components/Assets/food22.jpg"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 const Single = ()=>{
     const [view, setView] = useState("Post")
     return(
@@ -22,7 +23,7 @@ const Single = ()=>{
                     <div className="level-one">
                         <h3>Galapagous01</h3>
                         <button>Edit profile</button>
-                        <Settings/>
+                        <Link to="/single/edit/3"><Settings/></Link> 
                         <MoreHorizRounded/>
                     </div>
                     <div className="level-two">
