@@ -86,6 +86,7 @@ const Sidebar = ()=>{
                 <button onClick={()=>{setCreatePost(!createPost)}}>
                 <ClearRounded/>
                 </button>
+                <Link to="/single/create/7">
                 <div className="create-block">
                     <div className="title">
                     <span>Create new post</span>
@@ -96,6 +97,7 @@ const Sidebar = ()=>{
                     <span>Drag photos and videos here</span>
                     </div>
                 </div>
+                </Link>
             </div>}
             <Link to="/single/1">
             <SideElement title = "Profile" img = {Profile}/>

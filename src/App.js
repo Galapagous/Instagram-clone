@@ -8,6 +8,7 @@ import Explore from "./Pages/Explore/Explore";
 import Reels from "./Pages/Reels/Reels";
 import Message from "./Pages/Message/Message";
 import Settings from "./Pages/Settings/Settings"
+import Create from "./Pages/CreatePost/Create";
 
 const Layout = ()=>{
   return(
@@ -69,6 +70,10 @@ function App() {
     {
       path: "/single/edit/:id",
       element: <SingleLayout><Settings/></SingleLayout>
+    },
+    {
+      path: "/single/create/:id",
+      element: <SingleLayout><Create/></SingleLayout>
     },
   ])
   return (
