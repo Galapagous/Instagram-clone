@@ -6,7 +6,7 @@ const User = [
     "password": "hashedpassword",
     "accountType": "public",
     "avatar": "https://www.example.com/avatar.png",
-    "tags": ["photographer", "traveler", "foodie"],
+    "saved": ["photographer", "traveler", "foodie"],
     "bio": "I love taking photos of beautiful places and delicious food.",
     "website": "https://www.example.com",
     "following": ["2", "3", "4"],

@@ -79,26 +79,9 @@ const Sidebar = ()=>{
                     
                 </div>
             </div>}
-            <button onClick={()=>{setCreatePost(!createPost)}}>
-            <SideElement title = "Create" img = {Create}/>
-            </button>
-            {createPost && <div className="create">
-                <button onClick={()=>{setCreatePost(!createPost)}}>
-                <ClearRounded/>
-                </button>
                 <Link to="/single/create/7">
-                <div className="create-block">
-                    <div className="title">
-                    <span>Create new post</span>
-                    </div>
-                    <div className="upload">
-                    <label for="file-input">{<CollectionsRounded/>}</label>
-                    <input id="file-input" type="file"/>
-                    <span>Drag photos and videos here</span>
-                    </div>
-                </div>
+                    <SideElement title = "Create" img = {Create}/>
                 </Link>
-            </div>}
             <Link to="/single/1">
             <SideElement title = "Profile" img = {Profile}/>
             </Link>
