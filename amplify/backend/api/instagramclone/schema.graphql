@@ -12,7 +12,6 @@ type User @model {
   avatar: String,
   bio: String,
   website: String,
-  posts: [Post] @hasMany,
   following: [User] @hasMany,
   followers: [User] @hasMany,
   savedPost: [Post] @hasMany,
@@ -23,7 +22,8 @@ type User @model {
 type Post @model {
   id: ID!
   title: String!
-  belogTo: User @belongsTo
+  description: String!
+  owner: User @belongsTo
   comments: [Comment] @hasMany,
   media: [],
   tags: [User] @hasMany,

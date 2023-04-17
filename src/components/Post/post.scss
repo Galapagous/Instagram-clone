@@ -2,6 +2,9 @@
     width: 100%;
     margin: auto;
     margin-top: 50px;
+    transition: display;
+    transition-timing-function: ease;
+    transition-duration: 400ms;
     .post-section{
         width: 80%;
         margin: auto;
@@ -10,6 +13,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        svg{
+            cursor: pointer;
+        }
         .element-container{
             gap: 5px;
             .text-area{
@@ -34,6 +44,55 @@
 
             }
         }
+        button{
+            background-color: transparent;
+            border: none;
+        }
+        .more-element{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            
+            ul{
+                width: 35%;
+                height: 60%;
+                border-radius: 6px;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                button{
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    font-weight: 1.2rem;
+                    &:hover{
+                        color: red;
+                    }
+                }
+                li{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    list-style: none;
+                    border-top: 1px solid black;
+                    border-bottom: 1px solid black;
+                    &:hover{
+                        color: red;
+                    }
+                }
+            }
+        }
     }
     .middle-section{
         width: 100%;
@@ -52,10 +111,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            img{
+            svg{
                 width: 20px;
                 height: 20px;
                 object-fit: cover;
+            }
+            button{
+                background-color: transparent;
+                border: none;
                 cursor: pointer;
             }
             .left-side{
@@ -70,13 +133,146 @@
             }
         }
     }
+    .comments{
+        padding: 3rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: black;
+        color: white;
+        box-sizing: border-box;
+        .cancel{
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            button{
+                background-color: transparent;
+                border: none;
+                svg{
+                    color: crimson;
+                    cursor: pointer;
+                    transition: transform;
+                    transition-timing-function: ease;
+                    transition-duration: 400ms;
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+        .left{
+            flex: 1;
+            img{
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+            }
+        }
+        .right{
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            .top{
+                img{
+                    width: 30px;
+                    height: 30px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    border: 1px solid crimson;
+                }
+                h2{
+                    font-size: 1rem;
+                    font-weight: normal;
+                }
+                span{
+                    font-size: 0.8rem;
+                }
+            }
+            .bottom{
+                .left{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img{
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+                .comment-area{
+                    margin-top: 20px;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 20px;
+                    overflow-y: scroll;
+                    scroll-behavior: smooth;
+                    min-width: 100%;
+                    height: 200px;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                    h2{
+                        font-weight: normal;
+                        font-size: 1rem;
+                    }
+                    span{
+                        font-size: 0.8rem;
+                        background-color: rgb(99, 97, 97);
+                        padding: 3px;
+                        border-radius: 3px;
+                    }
+                }
+                .write{
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    padding: 20px 0px;
+                    input{
+                        width: 80%;
+                        border: none;
+                        height: 40px;
+                        padding: 0px 20px;
+                        outline: none;
+                        font-size: 1.2rem;
+                    }
+                    button{
+                        border: none;
+                        background-color: transparent;
+                        svg{
+                            color: white;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
     .bottom-section{
         display: flex;
         align-items: flex-start;
         flex-direction: column;
+        button{
+            border: none;
+            background-color: transparent;
+        }
         span{
             color: grey;
             margin: 10px 0px;
+            cursor: pointer;
         }
         .add-comment{
             width: 100%;
@@ -91,10 +287,15 @@
                 border: none;
                 outline: none;
             }
-            img{
-                width: 20px;
-                height: 20px;
-                object-fit: cover;
+            button{
+                border: none;
+                background-color: transparent;
+                svg{
+                    width: 20px;
+                    height: 20px;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
             }
         }
     }

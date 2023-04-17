@@ -1,20 +1,27 @@
-import { CollectionsRounded } from "@mui/icons-material"
+import { CollectionsRounded, Instagram } from "@mui/icons-material"
 import "./create.scss"
-import Background from "../../components/Assets/post-1.jpg"
+import Logo from "../../components/Assets/insta.png"
 import Background2 from "../../components/Assets/post-2.jpg"
-import { useRef } from "react"
-import { Picker } from "emoji-mart"
+import { useRef, useState } from "react"
 
 
  const Create = ()=>{
   const titleRef = useRef(null)
   const descRef = useRef(null)
-  const imageRef = useRef(null)
+  const [postImage, setPostImage] = useState()
 
   const handleSubmit = (e)=>{
     e.preventDefault();
-    alert("hello")
+    const desc = descRef.current.value
+    const title = titleRef.current.value
   }
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    const imageUrl = URL.createObjectURL(file);
+    setPostImage(imageUrl);
+  };
+
   return(
   <div className="create-container">
     <div className="create">
@@ -25,8 +32,15 @@ import { Picker } from "emoji-mart"
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Title" ref={titleRef}/>
         <textarea placeholder="description" ref={descRef}></textarea>
-        <label for="file-input"><CollectionsRounded/></label>
-        <input style={{display: "none"}} id="file-input" type="file" ref={imageRef}/>
+        <div className="post-image">
+          <div className="left">
+            {postImage ? <img src={postImage} alt="upload"/> : <p>Your image will appear here</p>}
+          </div>
+          <div className="right">
+          <label for="file-input"><CollectionsRounded/></label>
+          <input style={{display: "none"}} id="file-input" type="file" onChange={handleImageChange}/>
+          </div>
+        </div>
         <button>Post</button>
       </form>
     </div>
