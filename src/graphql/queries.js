@@ -1,41 +1,159 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getBlog = /* GraphQL */ `
-  query GetBlog($id: ID!) {
-    getBlog(id: $id) {
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
       id
-      name
+      Name
+      username
       posts {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      email
+      password
+      avatar
+      bio
+      website
+      following {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      followers {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      comments {
+        items {
+          id
+          content
+          createdAt
+          updatedAt
+          userCommentsId
+          postCommentsId
+        }
+        nextToken
+      }
+      savedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      conversation {
         items {
           id
           title
           createdAt
           updatedAt
-          blogPostsId
+          userConversationId
         }
         nextToken
       }
+      isPrivate
       createdAt
       updatedAt
+      userFollowingId
+      userFollowersId
+      postTagsId
+      postLikesId
+      conversationParticipantsId
     }
   }
 `;
-export const listBlogs = /* GraphQL */ `
-  query ListBlogs(
-    $filter: ModelBlogFilterInput
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listBlogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
+        Name
+        username
         posts {
           nextToken
         }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
       }
       nextToken
     }
@@ -46,14 +164,42 @@ export const getPost = /* GraphQL */ `
     getPost(id: $id) {
       id
       title
-      blog {
+      description
+      owner {
         id
-        name
+        Name
+        username
         posts {
           nextToken
         }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
       }
       comments {
         items {
@@ -61,13 +207,58 @@ export const getPost = /* GraphQL */ `
           content
           createdAt
           updatedAt
+          userCommentsId
           postCommentsId
+        }
+        nextToken
+      }
+      media
+      tags {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      likes {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      userPostsId
+      userSavedPostId
     }
   }
 `;
@@ -81,18 +272,39 @@ export const listPosts = /* GraphQL */ `
       items {
         id
         title
-        blog {
+        description
+        owner {
           id
-          name
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
           createdAt
           updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
         }
         comments {
           nextToken
         }
+        media
+        tags {
+          nextToken
+        }
+        likes {
+          nextToken
+        }
         createdAt
         updatedAt
-        blogPostsId
+        userPostsId
+        userSavedPostId
       }
       nextToken
     }
@@ -102,25 +314,83 @@ export const getComment = /* GraphQL */ `
   query GetComment($id: ID!) {
     getComment(id: $id) {
       id
-      post {
+      user {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
         }
         comments {
           nextToken
         }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
-        blogPostsId
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      post {
+        id
+        title
+        description
+        owner {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        comments {
+          nextToken
+        }
+        media
+        tags {
+          nextToken
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        userSavedPostId
       }
       content
       createdAt
       updatedAt
+      userCommentsId
       postCommentsId
     }
   }
@@ -134,17 +404,208 @@ export const listComments = /* GraphQL */ `
     listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        user {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
         post {
           id
           title
+          description
+          media
           createdAt
           updatedAt
-          blogPostsId
+          userPostsId
+          userSavedPostId
         }
         content
         createdAt
         updatedAt
+        userCommentsId
         postCommentsId
+      }
+      nextToken
+    }
+  }
+`;
+export const getConversation = /* GraphQL */ `
+  query GetConversation($id: ID!) {
+    getConversation(id: $id) {
+      id
+      title
+      messages {
+        items {
+          id
+          text
+          createdAt
+          updatedAt
+          conversationMessagesId
+        }
+        nextToken
+      }
+      participants {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userConversationId
+    }
+  }
+`;
+export const listConversations = /* GraphQL */ `
+  query ListConversations(
+    $filter: ModelConversationFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listConversations(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        messages {
+          nextToken
+        }
+        participants {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userConversationId
+      }
+      nextToken
+    }
+  }
+`;
+export const getMessage = /* GraphQL */ `
+  query GetMessage($id: ID!) {
+    getMessage(id: $id) {
+      id
+      text
+      author {
+        id
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
+        createdAt
+        updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      conversation {
+        id
+        title
+        messages {
+          nextToken
+        }
+        participants {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userConversationId
+      }
+      createdAt
+      updatedAt
+      conversationMessagesId
+    }
+  }
+`;
+export const listMessages = /* GraphQL */ `
+  query ListMessages(
+    $filter: ModelMessageFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listMessages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        text
+        author {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        conversation {
+          id
+          title
+          createdAt
+          updatedAt
+          userConversationId
+        }
+        createdAt
+        updatedAt
+        conversationMessagesId
       }
       nextToken
     }

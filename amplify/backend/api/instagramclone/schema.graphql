@@ -4,7 +4,7 @@ input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONL
 
 type User @model {
   id: ID!
-  name: String!
+  Name: String!
   username: String,
   posts: [Post] @hasMany,
   email: String,
@@ -14,6 +14,7 @@ type User @model {
   website: String,
   following: [User] @hasMany,
   followers: [User] @hasMany,
+  comments: [Comment] @hasMany
   savedPost: [Post] @hasMany,
   conversation: [Conversation] @hasMany,
   isPrivate: Boolean
@@ -25,7 +26,7 @@ type Post @model {
   description: String!
   owner: User @belongsTo
   comments: [Comment] @hasMany,
-  media: [],
+  media: [String!],
   tags: [User] @hasMany,
   likes: [User] @hasMany,
 
@@ -47,7 +48,7 @@ type Conversation @model {
 
 type Message @model {
   id: ID!
-  test: String!
+  text: String!
   author: User!
   conversation: Conversation!
 }

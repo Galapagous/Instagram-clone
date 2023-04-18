@@ -1,72 +1,345 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createBlog = /* GraphQL */ `
-  mutation CreateBlog(
-    $input: CreateBlogInput!
-    $condition: ModelBlogConditionInput
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    createBlog(input: $input, condition: $condition) {
+    createUser(input: $input, condition: $condition) {
       id
-      name
+      Name
+      username
       posts {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      email
+      password
+      avatar
+      bio
+      website
+      following {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      followers {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      comments {
+        items {
+          id
+          content
+          createdAt
+          updatedAt
+          userCommentsId
+          postCommentsId
+        }
+        nextToken
+      }
+      savedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      conversation {
         items {
           id
           title
           createdAt
           updatedAt
-          blogPostsId
+          userConversationId
         }
         nextToken
       }
+      isPrivate
       createdAt
       updatedAt
+      userFollowingId
+      userFollowersId
+      postTagsId
+      postLikesId
+      conversationParticipantsId
     }
   }
 `;
-export const updateBlog = /* GraphQL */ `
-  mutation UpdateBlog(
-    $input: UpdateBlogInput!
-    $condition: ModelBlogConditionInput
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    updateBlog(input: $input, condition: $condition) {
+    updateUser(input: $input, condition: $condition) {
       id
-      name
+      Name
+      username
       posts {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      email
+      password
+      avatar
+      bio
+      website
+      following {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      followers {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      comments {
+        items {
+          id
+          content
+          createdAt
+          updatedAt
+          userCommentsId
+          postCommentsId
+        }
+        nextToken
+      }
+      savedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      conversation {
         items {
           id
           title
           createdAt
           updatedAt
-          blogPostsId
+          userConversationId
         }
         nextToken
       }
+      isPrivate
       createdAt
       updatedAt
+      userFollowingId
+      userFollowersId
+      postTagsId
+      postLikesId
+      conversationParticipantsId
     }
   }
 `;
-export const deleteBlog = /* GraphQL */ `
-  mutation DeleteBlog(
-    $input: DeleteBlogInput!
-    $condition: ModelBlogConditionInput
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    deleteBlog(input: $input, condition: $condition) {
+    deleteUser(input: $input, condition: $condition) {
       id
-      name
+      Name
+      username
       posts {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      email
+      password
+      avatar
+      bio
+      website
+      following {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      followers {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      comments {
+        items {
+          id
+          content
+          createdAt
+          updatedAt
+          userCommentsId
+          postCommentsId
+        }
+        nextToken
+      }
+      savedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      conversation {
         items {
           id
           title
           createdAt
           updatedAt
-          blogPostsId
+          userConversationId
         }
         nextToken
       }
+      isPrivate
       createdAt
       updatedAt
+      userFollowingId
+      userFollowersId
+      postTagsId
+      postLikesId
+      conversationParticipantsId
     }
   }
 `;
@@ -78,14 +351,42 @@ export const createPost = /* GraphQL */ `
     createPost(input: $input, condition: $condition) {
       id
       title
-      blog {
+      description
+      owner {
         id
-        name
+        Name
+        username
         posts {
           nextToken
         }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
       }
       comments {
         items {
@@ -93,13 +394,58 @@ export const createPost = /* GraphQL */ `
           content
           createdAt
           updatedAt
+          userCommentsId
           postCommentsId
+        }
+        nextToken
+      }
+      media
+      tags {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      likes {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      userPostsId
+      userSavedPostId
     }
   }
 `;
@@ -111,14 +457,42 @@ export const updatePost = /* GraphQL */ `
     updatePost(input: $input, condition: $condition) {
       id
       title
-      blog {
+      description
+      owner {
         id
-        name
+        Name
+        username
         posts {
           nextToken
         }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
       }
       comments {
         items {
@@ -126,13 +500,58 @@ export const updatePost = /* GraphQL */ `
           content
           createdAt
           updatedAt
+          userCommentsId
           postCommentsId
+        }
+        nextToken
+      }
+      media
+      tags {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      likes {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      userPostsId
+      userSavedPostId
     }
   }
 `;
@@ -144,14 +563,42 @@ export const deletePost = /* GraphQL */ `
     deletePost(input: $input, condition: $condition) {
       id
       title
-      blog {
+      description
+      owner {
         id
-        name
+        Name
+        username
         posts {
           nextToken
         }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
       }
       comments {
         items {
@@ -159,13 +606,58 @@ export const deletePost = /* GraphQL */ `
           content
           createdAt
           updatedAt
+          userCommentsId
           postCommentsId
+        }
+        nextToken
+      }
+      media
+      tags {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      likes {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      userPostsId
+      userSavedPostId
     }
   }
 `;
@@ -176,25 +668,83 @@ export const createComment = /* GraphQL */ `
   ) {
     createComment(input: $input, condition: $condition) {
       id
-      post {
+      user {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
         }
         comments {
           nextToken
         }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
-        blogPostsId
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      post {
+        id
+        title
+        description
+        owner {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        comments {
+          nextToken
+        }
+        media
+        tags {
+          nextToken
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        userSavedPostId
       }
       content
       createdAt
       updatedAt
+      userCommentsId
       postCommentsId
     }
   }
@@ -206,25 +756,83 @@ export const updateComment = /* GraphQL */ `
   ) {
     updateComment(input: $input, condition: $condition) {
       id
-      post {
+      user {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
         }
         comments {
           nextToken
         }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
-        blogPostsId
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      post {
+        id
+        title
+        description
+        owner {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        comments {
+          nextToken
+        }
+        media
+        tags {
+          nextToken
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        userSavedPostId
       }
       content
       createdAt
       updatedAt
+      userCommentsId
       postCommentsId
     }
   }
@@ -236,26 +844,408 @@ export const deleteComment = /* GraphQL */ `
   ) {
     deleteComment(input: $input, condition: $condition) {
       id
-      post {
+      user {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
         }
         comments {
           nextToken
         }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
-        blogPostsId
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      post {
+        id
+        title
+        description
+        owner {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        comments {
+          nextToken
+        }
+        media
+        tags {
+          nextToken
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        userSavedPostId
       }
       content
       createdAt
       updatedAt
+      userCommentsId
       postCommentsId
+    }
+  }
+`;
+export const createConversation = /* GraphQL */ `
+  mutation CreateConversation(
+    $input: CreateConversationInput!
+    $condition: ModelConversationConditionInput
+  ) {
+    createConversation(input: $input, condition: $condition) {
+      id
+      title
+      messages {
+        items {
+          id
+          text
+          createdAt
+          updatedAt
+          conversationMessagesId
+        }
+        nextToken
+      }
+      participants {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userConversationId
+    }
+  }
+`;
+export const updateConversation = /* GraphQL */ `
+  mutation UpdateConversation(
+    $input: UpdateConversationInput!
+    $condition: ModelConversationConditionInput
+  ) {
+    updateConversation(input: $input, condition: $condition) {
+      id
+      title
+      messages {
+        items {
+          id
+          text
+          createdAt
+          updatedAt
+          conversationMessagesId
+        }
+        nextToken
+      }
+      participants {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userConversationId
+    }
+  }
+`;
+export const deleteConversation = /* GraphQL */ `
+  mutation DeleteConversation(
+    $input: DeleteConversationInput!
+    $condition: ModelConversationConditionInput
+  ) {
+    deleteConversation(input: $input, condition: $condition) {
+      id
+      title
+      messages {
+        items {
+          id
+          text
+          createdAt
+          updatedAt
+          conversationMessagesId
+        }
+        nextToken
+      }
+      participants {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userConversationId
+    }
+  }
+`;
+export const createMessage = /* GraphQL */ `
+  mutation CreateMessage(
+    $input: CreateMessageInput!
+    $condition: ModelMessageConditionInput
+  ) {
+    createMessage(input: $input, condition: $condition) {
+      id
+      text
+      author {
+        id
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
+        createdAt
+        updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      conversation {
+        id
+        title
+        messages {
+          nextToken
+        }
+        participants {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userConversationId
+      }
+      createdAt
+      updatedAt
+      conversationMessagesId
+    }
+  }
+`;
+export const updateMessage = /* GraphQL */ `
+  mutation UpdateMessage(
+    $input: UpdateMessageInput!
+    $condition: ModelMessageConditionInput
+  ) {
+    updateMessage(input: $input, condition: $condition) {
+      id
+      text
+      author {
+        id
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
+        createdAt
+        updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      conversation {
+        id
+        title
+        messages {
+          nextToken
+        }
+        participants {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userConversationId
+      }
+      createdAt
+      updatedAt
+      conversationMessagesId
+    }
+  }
+`;
+export const deleteMessage = /* GraphQL */ `
+  mutation DeleteMessage(
+    $input: DeleteMessageInput!
+    $condition: ModelMessageConditionInput
+  ) {
+    deleteMessage(input: $input, condition: $condition) {
+      id
+      text
+      author {
+        id
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
+        createdAt
+        updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      conversation {
+        id
+        title
+        messages {
+          nextToken
+        }
+        participants {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userConversationId
+      }
+      createdAt
+      updatedAt
+      conversationMessagesId
     }
   }
 `;

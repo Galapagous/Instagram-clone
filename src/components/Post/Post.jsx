@@ -2,13 +2,13 @@ import SideElement from "../SideElement/SideElement"
 import Musa1 from "../Assets/musa2.jpg"
 import Xmass from "../Assets/bike2.jpg"
 import "./post.scss"
-import { Favorite, MapsUgc, MoreHorizRounded, BookmarkBorder, Send, Cancel } from "@mui/icons-material"
+import { Favorite, MapsUgc, MoreHorizRounded, BookmarkBorder, Send, Cancel, EmojiEmotions } from "@mui/icons-material"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import InputField from "../InputField/InputField"
 const Post = ()=>{
     const [moreOption, setMore] = useState(false)
     const [messageView, setMessageView] = useState(false)
-    const [inputValue, setInputValue] = useState('');
     const handleShare = async()=>{
         try{
             await navigator.share({
@@ -19,9 +19,6 @@ const Post = ()=>{
         }catch(error){
             console.log({"Share Error": error.message})
         }
-    }
-    const handleComment = (e)=>{
-        alert(inputValue)
     }
     return(
         <div className="post-container">
@@ -89,10 +86,7 @@ const Post = ()=>{
                                 )
                             })}
                         </div>
-                        <div className="write">
-                        <input type="text" placeholder="Add a comment..." onChange={(e)=>{setInputValue(e.target.value)}}/>
-                        <button onClick={handleComment}><Send/></button>
-                        </div>
+                        <InputField/>
                     </div>
                 </div>
                 <div className="cancel">
@@ -105,10 +99,7 @@ const Post = ()=>{
                 <button onClick={()=>{setMessageView(true)}}>
                 <span>View all 4 comment</span>
                 </button>
-                <div className="add-comment">
-                <input type="text" placeholder="Add a comment..." onChange={(e)=>{setInputValue(e.target.value)}}/>
-                <button onClick={handleComment}><Send/></button>
-                </div>
+                <InputField/>
             </div>
             <hr/>
             </div>

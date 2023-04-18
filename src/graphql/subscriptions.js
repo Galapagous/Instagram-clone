@@ -1,63 +1,336 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateBlog = /* GraphQL */ `
-  subscription OnCreateBlog($filter: ModelSubscriptionBlogFilterInput) {
-    onCreateBlog(filter: $filter) {
+export const onCreateUser = /* GraphQL */ `
+  subscription OnCreateUser($filter: ModelSubscriptionUserFilterInput) {
+    onCreateUser(filter: $filter) {
       id
-      name
+      Name
+      username
       posts {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      email
+      password
+      avatar
+      bio
+      website
+      following {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      followers {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      comments {
+        items {
+          id
+          content
+          createdAt
+          updatedAt
+          userCommentsId
+          postCommentsId
+        }
+        nextToken
+      }
+      savedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      conversation {
         items {
           id
           title
           createdAt
           updatedAt
-          blogPostsId
+          userConversationId
         }
         nextToken
       }
+      isPrivate
       createdAt
       updatedAt
+      userFollowingId
+      userFollowersId
+      postTagsId
+      postLikesId
+      conversationParticipantsId
     }
   }
 `;
-export const onUpdateBlog = /* GraphQL */ `
-  subscription OnUpdateBlog($filter: ModelSubscriptionBlogFilterInput) {
-    onUpdateBlog(filter: $filter) {
+export const onUpdateUser = /* GraphQL */ `
+  subscription OnUpdateUser($filter: ModelSubscriptionUserFilterInput) {
+    onUpdateUser(filter: $filter) {
       id
-      name
+      Name
+      username
       posts {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      email
+      password
+      avatar
+      bio
+      website
+      following {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      followers {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      comments {
+        items {
+          id
+          content
+          createdAt
+          updatedAt
+          userCommentsId
+          postCommentsId
+        }
+        nextToken
+      }
+      savedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      conversation {
         items {
           id
           title
           createdAt
           updatedAt
-          blogPostsId
+          userConversationId
         }
         nextToken
       }
+      isPrivate
       createdAt
       updatedAt
+      userFollowingId
+      userFollowersId
+      postTagsId
+      postLikesId
+      conversationParticipantsId
     }
   }
 `;
-export const onDeleteBlog = /* GraphQL */ `
-  subscription OnDeleteBlog($filter: ModelSubscriptionBlogFilterInput) {
-    onDeleteBlog(filter: $filter) {
+export const onDeleteUser = /* GraphQL */ `
+  subscription OnDeleteUser($filter: ModelSubscriptionUserFilterInput) {
+    onDeleteUser(filter: $filter) {
       id
-      name
+      Name
+      username
       posts {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      email
+      password
+      avatar
+      bio
+      website
+      following {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      followers {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      comments {
+        items {
+          id
+          content
+          createdAt
+          updatedAt
+          userCommentsId
+          postCommentsId
+        }
+        nextToken
+      }
+      savedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+        }
+        nextToken
+      }
+      conversation {
         items {
           id
           title
           createdAt
           updatedAt
-          blogPostsId
+          userConversationId
         }
         nextToken
       }
+      isPrivate
       createdAt
       updatedAt
+      userFollowingId
+      userFollowersId
+      postTagsId
+      postLikesId
+      conversationParticipantsId
     }
   }
 `;
@@ -66,14 +339,42 @@ export const onCreatePost = /* GraphQL */ `
     onCreatePost(filter: $filter) {
       id
       title
-      blog {
+      description
+      owner {
         id
-        name
+        Name
+        username
         posts {
           nextToken
         }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
       }
       comments {
         items {
@@ -81,13 +382,58 @@ export const onCreatePost = /* GraphQL */ `
           content
           createdAt
           updatedAt
+          userCommentsId
           postCommentsId
+        }
+        nextToken
+      }
+      media
+      tags {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      likes {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      userPostsId
+      userSavedPostId
     }
   }
 `;
@@ -96,14 +442,42 @@ export const onUpdatePost = /* GraphQL */ `
     onUpdatePost(filter: $filter) {
       id
       title
-      blog {
+      description
+      owner {
         id
-        name
+        Name
+        username
         posts {
           nextToken
         }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
       }
       comments {
         items {
@@ -111,13 +485,58 @@ export const onUpdatePost = /* GraphQL */ `
           content
           createdAt
           updatedAt
+          userCommentsId
           postCommentsId
+        }
+        nextToken
+      }
+      media
+      tags {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      likes {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      userPostsId
+      userSavedPostId
     }
   }
 `;
@@ -126,14 +545,42 @@ export const onDeletePost = /* GraphQL */ `
     onDeletePost(filter: $filter) {
       id
       title
-      blog {
+      description
+      owner {
         id
-        name
+        Name
+        username
         posts {
           nextToken
         }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
       }
       comments {
         items {
@@ -141,13 +588,58 @@ export const onDeletePost = /* GraphQL */ `
           content
           createdAt
           updatedAt
+          userCommentsId
           postCommentsId
+        }
+        nextToken
+      }
+      media
+      tags {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      likes {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      userPostsId
+      userSavedPostId
     }
   }
 `;
@@ -155,25 +647,83 @@ export const onCreateComment = /* GraphQL */ `
   subscription OnCreateComment($filter: ModelSubscriptionCommentFilterInput) {
     onCreateComment(filter: $filter) {
       id
-      post {
+      user {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
         }
         comments {
           nextToken
         }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
-        blogPostsId
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      post {
+        id
+        title
+        description
+        owner {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        comments {
+          nextToken
+        }
+        media
+        tags {
+          nextToken
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        userSavedPostId
       }
       content
       createdAt
       updatedAt
+      userCommentsId
       postCommentsId
     }
   }
@@ -182,25 +732,83 @@ export const onUpdateComment = /* GraphQL */ `
   subscription OnUpdateComment($filter: ModelSubscriptionCommentFilterInput) {
     onUpdateComment(filter: $filter) {
       id
-      post {
+      user {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
         }
         comments {
           nextToken
         }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
-        blogPostsId
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      post {
+        id
+        title
+        description
+        owner {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        comments {
+          nextToken
+        }
+        media
+        tags {
+          nextToken
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        userSavedPostId
       }
       content
       createdAt
       updatedAt
+      userCommentsId
       postCommentsId
     }
   }
@@ -209,26 +817,396 @@ export const onDeleteComment = /* GraphQL */ `
   subscription OnDeleteComment($filter: ModelSubscriptionCommentFilterInput) {
     onDeleteComment(filter: $filter) {
       id
-      post {
+      user {
         id
-        title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
         }
         comments {
           nextToken
         }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
         createdAt
         updatedAt
-        blogPostsId
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      post {
+        id
+        title
+        description
+        owner {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        comments {
+          nextToken
+        }
+        media
+        tags {
+          nextToken
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        userSavedPostId
       }
       content
       createdAt
       updatedAt
+      userCommentsId
       postCommentsId
+    }
+  }
+`;
+export const onCreateConversation = /* GraphQL */ `
+  subscription OnCreateConversation(
+    $filter: ModelSubscriptionConversationFilterInput
+  ) {
+    onCreateConversation(filter: $filter) {
+      id
+      title
+      messages {
+        items {
+          id
+          text
+          createdAt
+          updatedAt
+          conversationMessagesId
+        }
+        nextToken
+      }
+      participants {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userConversationId
+    }
+  }
+`;
+export const onUpdateConversation = /* GraphQL */ `
+  subscription OnUpdateConversation(
+    $filter: ModelSubscriptionConversationFilterInput
+  ) {
+    onUpdateConversation(filter: $filter) {
+      id
+      title
+      messages {
+        items {
+          id
+          text
+          createdAt
+          updatedAt
+          conversationMessagesId
+        }
+        nextToken
+      }
+      participants {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userConversationId
+    }
+  }
+`;
+export const onDeleteConversation = /* GraphQL */ `
+  subscription OnDeleteConversation(
+    $filter: ModelSubscriptionConversationFilterInput
+  ) {
+    onDeleteConversation(filter: $filter) {
+      id
+      title
+      messages {
+        items {
+          id
+          text
+          createdAt
+          updatedAt
+          conversationMessagesId
+        }
+        nextToken
+      }
+      participants {
+        items {
+          id
+          Name
+          username
+          email
+          password
+          avatar
+          bio
+          website
+          isPrivate
+          createdAt
+          updatedAt
+          userFollowingId
+          userFollowersId
+          postTagsId
+          postLikesId
+          conversationParticipantsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userConversationId
+    }
+  }
+`;
+export const onCreateMessage = /* GraphQL */ `
+  subscription OnCreateMessage($filter: ModelSubscriptionMessageFilterInput) {
+    onCreateMessage(filter: $filter) {
+      id
+      text
+      author {
+        id
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
+        createdAt
+        updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      conversation {
+        id
+        title
+        messages {
+          nextToken
+        }
+        participants {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userConversationId
+      }
+      createdAt
+      updatedAt
+      conversationMessagesId
+    }
+  }
+`;
+export const onUpdateMessage = /* GraphQL */ `
+  subscription OnUpdateMessage($filter: ModelSubscriptionMessageFilterInput) {
+    onUpdateMessage(filter: $filter) {
+      id
+      text
+      author {
+        id
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
+        createdAt
+        updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      conversation {
+        id
+        title
+        messages {
+          nextToken
+        }
+        participants {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userConversationId
+      }
+      createdAt
+      updatedAt
+      conversationMessagesId
+    }
+  }
+`;
+export const onDeleteMessage = /* GraphQL */ `
+  subscription OnDeleteMessage($filter: ModelSubscriptionMessageFilterInput) {
+    onDeleteMessage(filter: $filter) {
+      id
+      text
+      author {
+        id
+        Name
+        username
+        posts {
+          nextToken
+        }
+        email
+        password
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
+        createdAt
+        updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
+      }
+      conversation {
+        id
+        title
+        messages {
+          nextToken
+        }
+        participants {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userConversationId
+      }
+      createdAt
+      updatedAt
+      conversationMessagesId
     }
   }
 `;
