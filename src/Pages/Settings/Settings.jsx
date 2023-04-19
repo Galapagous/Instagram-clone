@@ -39,7 +39,11 @@ const Settings = ()=>{
           </div>
         </div>
         <div className="right-settings">
-          <SideElement title = "Galapagous" mini = "change your profile picture" img={Dodge}/>
+          <div className="profile-image">
+            <label for = "profile"><img src={Dodge}/></label>
+            <input id="profile" type="file"/>
+            <h4>Click on image to change profile picture</h4>
+          </div>
           <div className="change">
             {view === "edit" && <Edit/>}
             {view === "password" && <Password/>}

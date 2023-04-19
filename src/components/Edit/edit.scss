@@ -1,0 +1,21 @@
+.edit-container{
+    form{
+        svg{
+            display: none;
+        }
+        .write{
+            margin-bottom: 10px;
+            h3{
+                margin-bottom: 5px;
+            }
+            p{
+                color: grey;
+            }
+            input{
+                width: 60%;
+                height: 30px;
+                padding: 0px 5px;
+            }
+        }
+    }
+}

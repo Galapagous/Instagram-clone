@@ -35,7 +35,10 @@ const Post = ()=>{
                         <li><button onClick={()=>{alert("hello")}}>Report</button></li>
                         <li><button onClick={()=>{alert("hello")}}>Unfollow</button></li>
                         <li><button onClick={()=>{alert("hello")}}>Add to favorite</button></li>
-                        <li><button onClick={()=>{alert("hello")}}>Go to post</button></li>
+                        <li><button onClick={()=>{
+                            setMessageView(true)
+                            setMore(false)
+                            }}>Go to post</button></li>
                         <li><button onClick={handleShare}>Share</button></li>
                         <li><button onClick={()=>{setMore(false)}}>cancel</button></li>
                     </ul>
@@ -48,7 +51,7 @@ const Post = ()=>{
                         <button onClick={()=>{alert("favorite selected")}}>
                             <Favorite/>
                         </button>
-                        <button onClick={()=>{alert("comment selected")}}>
+                        <button onClick={()=>{setMessageView(true)}}>
                             <MapsUgc/>
                         </button>
                     </div>
@@ -99,7 +102,7 @@ const Post = ()=>{
                 <button onClick={()=>{setMessageView(true)}}>
                 <span>View all 4 comment</span>
                 </button>
-                <InputField/>
+                {!messageView && <InputField/>}
             </div>
             <hr/>
             </div>
