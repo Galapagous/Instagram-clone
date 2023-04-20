@@ -95,7 +95,7 @@ const Sidebar = ()=>{
                 <SideElement title="Settings" img = {Settings}/>
                     </Link>
                 <SideElement title="Your activity" img = {Time}/>
-                <SideElement title="Saved" img = {Bookmark}/>
+                <Link to="/single/1"><SideElement title="Saved" img = {Bookmark}/></Link>
                 <SideElement title="Switch appearance" img = {Moon}/>
                 <SideElement title="Report a problem" img = {Important}/>
                 <SideElement title="Switch account"/>

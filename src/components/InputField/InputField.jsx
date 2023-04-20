@@ -12,7 +12,6 @@ const InputField = (props) => {
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
-    // Send the form data to the backend server for processing here
     console.log(inputValue);
     setInputValue("")
   };
@@ -23,7 +22,7 @@ const InputField = (props) => {
         type="text" 
         placeholder= {props.placeholder ? props.placeholder : "Add a comment..."} 
         value={inputValue} 
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={(e) => setInputValue(e.target.value)} 
         type = {props.type}
       />
       {props.desc && <p>{props.desc}</p>}

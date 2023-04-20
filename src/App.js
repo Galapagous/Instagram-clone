@@ -1,45 +1,24 @@
 import "./app.scss"
 import Home from './Pages/Home/Home';
 import Single from './Pages/Single/Single';
-import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom"
-import Sidebar from './components/Sidebar/SIdebar';
-import RightBar from "./components/RightBar/RightBar";
+import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import Explore from "./Pages/Explore/Explore";
 import Reels from "./Pages/Reels/Reels";
 import Message from "./Pages/Message/Message";
 import Settings from "./Pages/Settings/Settings"
 import Create from "./Pages/CreatePost/Create";
+import SingleLayout from "./components/Layout/SingleLayout";
+import Layout from "./components/Layout/Layout";
+// -------------------------AWS Imports--------------------------
+import { Amplify } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
+// -------------------------AWS Imports--------------------------
 
-const Layout = ()=>{
-  return(
-    <div className='main-container' style={{display: "flex", alignItems:"flex-start"}}>
-      <div className='sidebar-container' style={{flex:"1" , height:"100vh", borderRight:"1px solid grey"}}>
-      <Sidebar/>
-      </div>
-      <div className='outlet-container' style={{flex:"2", height:"100vh", overflow:"scroll"}}>
-      <Outlet/>
-      </div>
-      <div className='rightbar-container' style={{flex:"1.3" , height:"100vh"}}>
-      <RightBar/>
-      </div>
-    </div>
-  )
-}
 
-const SingleLayout = ({ children }) => {
-  return (
-    <div className='single-container' style={{display: "flex", alignItems:"flex-start"}}>
-      <div className='sidebar-container' style={{flex:"1" , height:"100vh", borderRight:"1px solid grey"}}>
-        <Sidebar/>
-      </div>
-      <div className='outlet-container' style={{flex:"3", height:"100vh", overflow:"scroll"}}>
-        {children}
-      </div>
-    </div>
-  )
-}
-
-function App() {
+function App({ signOut, user }) {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -47,7 +26,7 @@ function App() {
       children:[
         {
           path:"/",
-          element:<Home/>
+          element:<Home user = {user}/>
         }
       ]
     },
@@ -81,4 +60,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);

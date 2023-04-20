@@ -3,13 +3,9 @@ import SideElement from "../../components/SideElement/SideElement"
 import "./home.scss"
 import Musa1 from "../../components/Assets/musa1.jpg"
 import Musa2 from "../../components/Assets/musa2.jpg"
-import Roy from "../../components/Assets/royvita.png"
-import Xmass from "../../components/Assets/xmas.png"
-import Bedroom from "../../components/Assets/bedroom.jpg"
-import Couple from "../../components/Assets/couple.jpg"
 import Post from "../../components/Post/Post"
 
-const Home = ()=>{
+const Home = (props)=>{
     return(
         <div className="container">
             <div className="status">
@@ -24,6 +20,7 @@ const Home = ()=>{
                 <SideElement title="ericsson" img={Musa1}/>
                 <SideElement title="ecmascript" img={Musa2}/>
             </div>
+            {console.log(props.user)}
             <div className="post-section">
                 <Post />
                 <Post />
