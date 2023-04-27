@@ -3,12 +3,13 @@
 input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
 
 type User @model {
-  id: ID!
-  Name: String!
+  id: ID!,
+  Name: String!,
+  userId:String!,
   username: String,
+  gender: String!,
+  phone: String,
   posts: [Post] @hasMany,
-  email: String,
-  password: String!,
   avatar: String,
   bio: String,
   website: String,

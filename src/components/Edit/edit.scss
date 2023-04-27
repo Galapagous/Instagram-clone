@@ -1,20 +1,33 @@
 .edit-container{
+    width: 100%;
     form{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
         svg{
             display: none;
         }
         .write{
+            display: flex;
+            flex-direction: column;
             margin-bottom: 10px;
-            h3{
+            label{
                 margin-bottom: 5px;
             }
             p{
                 color: grey;
             }
             input{
-                width: 60%;
+                width: 300px;
                 height: 30px;
                 padding: 0px 5px;
+            }
+            textarea{
+                width: 300px;
+                height: 150px;
+                padding: 6px;
             }
         }
     }

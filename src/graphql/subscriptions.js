@@ -6,7 +6,10 @@ export const onCreateUser = /* GraphQL */ `
     onCreateUser(filter: $filter) {
       id
       Name
+      userId
       username
+      gender
+      phone
       posts {
         items {
           id
@@ -20,8 +23,6 @@ export const onCreateUser = /* GraphQL */ `
         }
         nextToken
       }
-      email
-      password
       avatar
       bio
       website
@@ -29,9 +30,10 @@ export const onCreateUser = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -50,9 +52,10 @@ export const onCreateUser = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -117,7 +120,10 @@ export const onUpdateUser = /* GraphQL */ `
     onUpdateUser(filter: $filter) {
       id
       Name
+      userId
       username
+      gender
+      phone
       posts {
         items {
           id
@@ -131,8 +137,6 @@ export const onUpdateUser = /* GraphQL */ `
         }
         nextToken
       }
-      email
-      password
       avatar
       bio
       website
@@ -140,9 +144,10 @@ export const onUpdateUser = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -161,9 +166,10 @@ export const onUpdateUser = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -228,7 +234,10 @@ export const onDeleteUser = /* GraphQL */ `
     onDeleteUser(filter: $filter) {
       id
       Name
+      userId
       username
+      gender
+      phone
       posts {
         items {
           id
@@ -242,8 +251,6 @@ export const onDeleteUser = /* GraphQL */ `
         }
         nextToken
       }
-      email
-      password
       avatar
       bio
       website
@@ -251,9 +258,10 @@ export const onDeleteUser = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -272,9 +280,10 @@ export const onDeleteUser = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -343,12 +352,13 @@ export const onCreatePost = /* GraphQL */ `
       owner {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -392,9 +402,10 @@ export const onCreatePost = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -413,9 +424,10 @@ export const onCreatePost = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -446,12 +458,13 @@ export const onUpdatePost = /* GraphQL */ `
       owner {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -495,9 +508,10 @@ export const onUpdatePost = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -516,9 +530,10 @@ export const onUpdatePost = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -549,12 +564,13 @@ export const onDeletePost = /* GraphQL */ `
       owner {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -598,9 +614,10 @@ export const onDeletePost = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -619,9 +636,10 @@ export const onDeletePost = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -650,12 +668,13 @@ export const onCreateComment = /* GraphQL */ `
       user {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -690,9 +709,10 @@ export const onCreateComment = /* GraphQL */ `
         owner {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -735,12 +755,13 @@ export const onUpdateComment = /* GraphQL */ `
       user {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -775,9 +796,10 @@ export const onUpdateComment = /* GraphQL */ `
         owner {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -820,12 +842,13 @@ export const onDeleteComment = /* GraphQL */ `
       user {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -860,9 +883,10 @@ export const onDeleteComment = /* GraphQL */ `
         owner {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -919,9 +943,10 @@ export const onCreateConversation = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -963,9 +988,10 @@ export const onUpdateConversation = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -1007,9 +1033,10 @@ export const onDeleteConversation = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -1038,12 +1065,13 @@ export const onCreateMessage = /* GraphQL */ `
       author {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -1098,12 +1126,13 @@ export const onUpdateMessage = /* GraphQL */ `
       author {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -1158,12 +1187,13 @@ export const onDeleteMessage = /* GraphQL */ `
       author {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website

@@ -7,7 +7,7 @@ import Edit from "../../components/Edit/Edit"
 import { useState } from "react"
 import Password from "../../components/Password/Password"
 
-const Settings = ()=>{
+const Settings = (props)=>{
   const [view, setView] = useState("edit")
   return(
     <div className="settings-container">
@@ -45,7 +45,7 @@ const Settings = ()=>{
             <h4>Click on image to change profile picture</h4>
           </div>
           <div className="change">
-            {view === "edit" && <Edit/>}
+            {view === "edit" && <Edit user = {props.user}/>}
             {view === "password" && <Password/>}
           </div>
         </div>

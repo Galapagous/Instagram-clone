@@ -6,7 +6,10 @@ export const getUser = /* GraphQL */ `
     getUser(id: $id) {
       id
       Name
+      userId
       username
+      gender
+      phone
       posts {
         items {
           id
@@ -20,8 +23,6 @@ export const getUser = /* GraphQL */ `
         }
         nextToken
       }
-      email
-      password
       avatar
       bio
       website
@@ -29,9 +30,10 @@ export const getUser = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -50,9 +52,10 @@ export const getUser = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -122,12 +125,13 @@ export const listUsers = /* GraphQL */ `
       items {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -168,12 +172,13 @@ export const getPost = /* GraphQL */ `
       owner {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -217,9 +222,10 @@ export const getPost = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -238,9 +244,10 @@ export const getPost = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -276,9 +283,10 @@ export const listPosts = /* GraphQL */ `
         owner {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -317,12 +325,13 @@ export const getComment = /* GraphQL */ `
       user {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -357,9 +366,10 @@ export const getComment = /* GraphQL */ `
         owner {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -407,9 +417,10 @@ export const listComments = /* GraphQL */ `
         user {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -461,9 +472,10 @@ export const getConversation = /* GraphQL */ `
         items {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
@@ -516,12 +528,13 @@ export const getMessage = /* GraphQL */ `
       author {
         id
         Name
+        userId
         username
+        gender
+        phone
         posts {
           nextToken
         }
-        email
-        password
         avatar
         bio
         website
@@ -581,9 +594,10 @@ export const listMessages = /* GraphQL */ `
         author {
           id
           Name
+          userId
           username
-          email
-          password
+          gender
+          phone
           avatar
           bio
           website
