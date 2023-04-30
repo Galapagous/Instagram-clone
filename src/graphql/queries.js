@@ -20,6 +20,7 @@ export const getUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -91,6 +92,21 @@ export const getUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
+        }
+        nextToken
+      }
+      taggedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -147,6 +163,9 @@ export const listUsers = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -192,6 +211,9 @@ export const getPost = /* GraphQL */ `
           nextToken
         }
         savedPost {
+          nextToken
+        }
+        taggedPost {
           nextToken
         }
         conversation {
@@ -266,6 +288,7 @@ export const getPost = /* GraphQL */ `
       updatedAt
       userPostsId
       userSavedPostId
+      userTaggedPostId
     }
   }
 `;
@@ -313,6 +336,7 @@ export const listPosts = /* GraphQL */ `
         updatedAt
         userPostsId
         userSavedPostId
+        userTaggedPostId
       }
       nextToken
     }
@@ -345,6 +369,9 @@ export const getComment = /* GraphQL */ `
           nextToken
         }
         savedPost {
+          nextToken
+        }
+        taggedPost {
           nextToken
         }
         conversation {
@@ -396,6 +423,7 @@ export const getComment = /* GraphQL */ `
         updatedAt
         userPostsId
         userSavedPostId
+        userTaggedPostId
       }
       content
       createdAt
@@ -442,6 +470,7 @@ export const listComments = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
         }
         content
         createdAt
@@ -550,6 +579,9 @@ export const getMessage = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -620,6 +652,67 @@ export const listMessages = /* GraphQL */ `
         createdAt
         updatedAt
         conversationMessagesId
+      }
+      nextToken
+    }
+  }
+`;
+export const usersByUserIdAndId = /* GraphQL */ `
+  query UsersByUserIdAndId(
+    $userId: String!
+    $id: ModelIDKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    usersByUserIdAndId(
+      userId: $userId
+      id: $id
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        Name
+        userId
+        username
+        gender
+        phone
+        posts {
+          nextToken
+        }
+        avatar
+        bio
+        website
+        following {
+          nextToken
+        }
+        followers {
+          nextToken
+        }
+        comments {
+          nextToken
+        }
+        savedPost {
+          nextToken
+        }
+        taggedPost {
+          nextToken
+        }
+        conversation {
+          nextToken
+        }
+        isPrivate
+        createdAt
+        updatedAt
+        userFollowingId
+        userFollowersId
+        postTagsId
+        postLikesId
+        conversationParticipantsId
       }
       nextToken
     }

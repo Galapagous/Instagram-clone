@@ -11,6 +11,7 @@ const Edit = (props)=>{
     let initial = {
         Name: "",
         userId: `${props.user.attributes.sub}`,
+        username: "",
         bio: "",
         website: "",
         gender: "",
@@ -48,6 +49,11 @@ const Edit = (props)=>{
     <div className="write">
     <label>Name</label>
         <input onChange={event=>setInput("Name", event.target.value)} value={formState.Name} placeholder="Enter your name" title="Name" desc="Help people discover your account by using the name you're known by: either your full name, nickname, or business name.
+            You can only change your name twice within 14 days"/>
+    </div>
+    <div className="write">
+    <label>Username</label>
+        <input onChange={event=>setInput("username", event.target.value)} value={formState.username} placeholder="Enter your name" title="Name" desc="Help people discover your account by using the name you're known by: either your full name, nickname, or business name.
             You can only change your name twice within 14 days"/>
     </div>
     <div className="write">

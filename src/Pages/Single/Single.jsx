@@ -11,7 +11,7 @@ import Post6 from "../../components/Assets/food.jpg"
 import Post7 from "../../components/Assets/food22.jpg"
 import { useState } from "react"
 import { Link } from "react-router-dom"
-const Single = ()=>{
+const Single = ({user})=>{
     const [view, setView] = useState("Post")
     return(
         <div className="container">
@@ -21,18 +21,19 @@ const Single = ()=>{
                 </div>
                 <div className="right-side">
                     <div className="level-one">
-                        <h3>Galapagous01</h3>
+                        <h3>{user.username}</h3>
                         <button>Edit profile</button>
-                        <Link to="/single/edit/3"><Settings/></Link> 
+                        <Link to="/single/edit/3"><Settings user = {user}/></Link> 
                         <MoreHorizRounded/>
                     </div>
                     <div className="level-two">
-                        <span>0 posts</span>
-                        <span>0 followers</span>
-                        <span>0 following</span>
+                    {console.log(user)}
+                        <span>{user.posts.length || 0 } post</span>
+                        <span>{user.followers.length || 0 } followers</span>
+                        <span>{user.following.length || 0 } following</span>
                     </div>
                     <div className="level-three">
-                        <h2>Muhammed Musa</h2>
+                        <h2>{user.Name}</h2>
                     </div>
                 </div>
             </div>
@@ -52,26 +53,31 @@ const Single = ()=>{
                 <div className="bottom">
                 {view === "Post" && <div className="my-post">
                     <div className="posts">
-                        <ProfileCard img={Post4} like = "3500" comment = "1500"/>
-                        <ProfileCard img={Post1} like = "3000" comment = "1000"/>
-                        <ProfileCard img={Post2} like = "2000" comment = "500"/>
-                        <ProfileCard img={Post3} like = "1000" comment = "250"/>
+                    {user.post  ?
+                    user.post.map((eachPost=>{
+                        return(
+                        <ProfileCard img={Post4} like = {eachPost.likes.length} comment ={eachPost.comment.length}/>
+                        )
+                    })) : <h1>No post yet</h1>}
                     </div>
                 </div>}
                 {view === "Saved" && <div className="saved-post">
                     <div className="saved">
-                        <ProfileCard img={Post4} like = "3500" comment = "1500"/>
-                        <ProfileCard img={Post5} like = "3000" comment = "1000"/>
-                        <ProfileCard img={Post2} like = "2000" comment = "500"/>
-                        <ProfileCard img={Post6} like = "1000" comment = "250"/>
+                    {user.post  ?
+                    user.post.map((eachPost=>{
+                        return(
+                        <ProfileCard img={Post4} like = {eachPost.likes.length} comment ={eachPost.comment.length}/>
+                        )
+                    })) : <h1>No savedPost yet</h1>}
                     </div>
                 </div>}
                 {view === "Tagged" && <div className="tagged-post">
                     <div className="tagged">
-                        <ProfileCard img={Post4} like = "3500" comment = "1500"/>
-                        <ProfileCard img={Post5} like = "3000" comment = "1000"/>
-                        <ProfileCard img={Post2} like = "2000" comment = "500"/>
-                        <ProfileCard img={Post7} like = "1000" comment = "250"/>
+                    {user.taggedPost ? user.taggedPost.map((eachPost=>{
+                            return(
+                                <ProfileCard img={Post4} like = {eachPost.likes.length} comment = {eachPost.comment.length}/>
+                            )
+                        })) : <h1>No tagged Post</h1>}
                     </div>
                 </div>}
                 </div>

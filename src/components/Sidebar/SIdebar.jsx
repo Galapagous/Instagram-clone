@@ -18,11 +18,13 @@ import Send from "../Assets/send.png"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import { ClearRounded, CollectionsRounded, FavoriteBorder } from "@mui/icons-material"
-const Sidebar = ()=>{
+import { useEffect } from "react"
+const Sidebar = ({user, auth})=>{
     const [menuStatus, setMenuStatus] = useState(false)
     const [searchBox, setSearchBox] = useState(false)
     const [notifyBox, setNotifyBox] = useState(false)
     const [createPost, setCreatePost] = useState(false)
+    // const [currUser, setCurrUser] = useState({})
     const handleDefault = ()=>{
         notifyBox && setNotifyBox(false)
         searchBox && setSearchBox(false)

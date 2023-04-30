@@ -1,5 +1,5 @@
 import React from 'react';
-import { Amplify } from 'aws-amplify';
+import { Amplify, API, graphqlOperation } from 'aws-amplify';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import awsconfig from './aws-exports';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -12,45 +12,60 @@ import Settings from './Pages/Settings/Settings';
 import Create from './Pages/CreatePost/Create';
 import SingleLayout from './components/Layout/SingleLayout';
 import Layout from './components/Layout/Layout';
+import { Auth } from "aws-amplify"
 import './app.scss';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { usersByUserIdAndId } from './graphql/queries';
 
 Amplify.configure(awsconfig);
 
 function App({ signOut, user }) {
+  const [currUser, setCurrUser] = useState({})
+  const [authUser, setAuthUser] = useState({})
+  useEffect(()=>{
+    const getUser = async ()=>{
+      const AuthUser =await Auth.currentAuthenticatedUser()
+      const savedUser = await API.graphql(graphqlOperation(usersByUserIdAndId, {userId: `${AuthUser.attributes.sub}`}))
+      setCurrUser(savedUser.data.usersByUserIdAndId.items[0])
+      setAuthUser(AuthUser)
+  }
+  getUser()
+  },[])
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Layout />,
+      element: <Layout user={currUser}/>,
       children: [
         {
           path: '/',
-          element: <Home user={user} />,
+          element: <Home user={currUser} auth = {authUser}/>,
         },
       ],
     },
     {
       path: '/single/:id',
-      element: <SingleLayout><Single/></SingleLayout>,
+      element: <SingleLayout><Single user={currUser}/></SingleLayout>,
     },
     {
       path: '/single/explore',
-      element: <SingleLayout><Explore/></SingleLayout>,
+      element: <SingleLayout><Explore user={currUser}/></SingleLayout>,
     },
     {
       path: '/single/reel',
-      element: <SingleLayout><Reels/></SingleLayout>,
+      element: <SingleLayout><Reels user={currUser}/></SingleLayout>,
     },
     {
       path: '/single/message/:id',
-      element: <SingleLayout><Message/></SingleLayout>,
+      element: <SingleLayout><Message user={currUser}/></SingleLayout>,
     },
     {
       path: '/single/edit/:id',
-      element: <SingleLayout><Settings user = {user}/></SingleLayout>,
+      element: <SingleLayout><Settings user = {user} auth = {authUser}/></SingleLayout>,
     },
     {
       path: '/single/create/:id',
-      element: <SingleLayout><Create/></SingleLayout>,
+      element: <SingleLayout><Create user={currUser}/></SingleLayout>,
     },
   ]);
 

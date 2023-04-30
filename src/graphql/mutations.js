@@ -23,6 +23,7 @@ export const createUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -94,6 +95,21 @@ export const createUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
+        }
+        nextToken
+      }
+      taggedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -140,6 +156,7 @@ export const updateUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -211,6 +228,21 @@ export const updateUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
+        }
+        nextToken
+      }
+      taggedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -257,6 +289,7 @@ export const deleteUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -328,6 +361,21 @@ export const deleteUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
+        }
+        nextToken
+      }
+      taggedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -386,6 +434,9 @@ export const createPost = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -458,6 +509,7 @@ export const createPost = /* GraphQL */ `
       updatedAt
       userPostsId
       userSavedPostId
+      userTaggedPostId
     }
   }
 `;
@@ -495,6 +547,9 @@ export const updatePost = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -567,6 +622,7 @@ export const updatePost = /* GraphQL */ `
       updatedAt
       userPostsId
       userSavedPostId
+      userTaggedPostId
     }
   }
 `;
@@ -604,6 +660,9 @@ export const deletePost = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -676,6 +735,7 @@ export const deletePost = /* GraphQL */ `
       updatedAt
       userPostsId
       userSavedPostId
+      userTaggedPostId
     }
   }
 `;
@@ -709,6 +769,9 @@ export const createComment = /* GraphQL */ `
           nextToken
         }
         savedPost {
+          nextToken
+        }
+        taggedPost {
           nextToken
         }
         conversation {
@@ -760,6 +823,7 @@ export const createComment = /* GraphQL */ `
         updatedAt
         userPostsId
         userSavedPostId
+        userTaggedPostId
       }
       content
       createdAt
@@ -801,6 +865,9 @@ export const updateComment = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -850,6 +917,7 @@ export const updateComment = /* GraphQL */ `
         updatedAt
         userPostsId
         userSavedPostId
+        userTaggedPostId
       }
       content
       createdAt
@@ -891,6 +959,9 @@ export const deleteComment = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -940,6 +1011,7 @@ export const deleteComment = /* GraphQL */ `
         updatedAt
         userPostsId
         userSavedPostId
+        userTaggedPostId
       }
       content
       createdAt
@@ -1120,6 +1192,9 @@ export const createMessage = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -1184,6 +1259,9 @@ export const updateMessage = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -1246,6 +1324,9 @@ export const deleteMessage = /* GraphQL */ `
           nextToken
         }
         savedPost {
+          nextToken
+        }
+        taggedPost {
           nextToken
         }
         conversation {

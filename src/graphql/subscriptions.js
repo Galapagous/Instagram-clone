@@ -20,6 +20,7 @@ export const onCreateUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -91,6 +92,21 @@ export const onCreateUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
+        }
+        nextToken
+      }
+      taggedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -134,6 +150,7 @@ export const onUpdateUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -205,6 +222,21 @@ export const onUpdateUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
+        }
+        nextToken
+      }
+      taggedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -248,6 +280,7 @@ export const onDeleteUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -319,6 +352,21 @@ export const onDeleteUser = /* GraphQL */ `
           updatedAt
           userPostsId
           userSavedPostId
+          userTaggedPostId
+        }
+        nextToken
+      }
+      taggedPost {
+        items {
+          id
+          title
+          description
+          media
+          createdAt
+          updatedAt
+          userPostsId
+          userSavedPostId
+          userTaggedPostId
         }
         nextToken
       }
@@ -374,6 +422,9 @@ export const onCreatePost = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -446,6 +497,7 @@ export const onCreatePost = /* GraphQL */ `
       updatedAt
       userPostsId
       userSavedPostId
+      userTaggedPostId
     }
   }
 `;
@@ -480,6 +532,9 @@ export const onUpdatePost = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -552,6 +607,7 @@ export const onUpdatePost = /* GraphQL */ `
       updatedAt
       userPostsId
       userSavedPostId
+      userTaggedPostId
     }
   }
 `;
@@ -586,6 +642,9 @@ export const onDeletePost = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -658,6 +717,7 @@ export const onDeletePost = /* GraphQL */ `
       updatedAt
       userPostsId
       userSavedPostId
+      userTaggedPostId
     }
   }
 `;
@@ -688,6 +748,9 @@ export const onCreateComment = /* GraphQL */ `
           nextToken
         }
         savedPost {
+          nextToken
+        }
+        taggedPost {
           nextToken
         }
         conversation {
@@ -739,6 +802,7 @@ export const onCreateComment = /* GraphQL */ `
         updatedAt
         userPostsId
         userSavedPostId
+        userTaggedPostId
       }
       content
       createdAt
@@ -777,6 +841,9 @@ export const onUpdateComment = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -826,6 +893,7 @@ export const onUpdateComment = /* GraphQL */ `
         updatedAt
         userPostsId
         userSavedPostId
+        userTaggedPostId
       }
       content
       createdAt
@@ -864,6 +932,9 @@ export const onDeleteComment = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -913,6 +984,7 @@ export const onDeleteComment = /* GraphQL */ `
         updatedAt
         userPostsId
         userSavedPostId
+        userTaggedPostId
       }
       content
       createdAt
@@ -1087,6 +1159,9 @@ export const onCreateMessage = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -1148,6 +1223,9 @@ export const onUpdateMessage = /* GraphQL */ `
         savedPost {
           nextToken
         }
+        taggedPost {
+          nextToken
+        }
         conversation {
           nextToken
         }
@@ -1207,6 +1285,9 @@ export const onDeleteMessage = /* GraphQL */ `
           nextToken
         }
         savedPost {
+          nextToken
+        }
+        taggedPost {
           nextToken
         }
         conversation {

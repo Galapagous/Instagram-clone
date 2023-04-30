@@ -7,7 +7,7 @@ import Edit from "../../components/Edit/Edit"
 import { useState } from "react"
 import Password from "../../components/Password/Password"
 
-const Settings = (props)=>{
+const Settings = ({user})=>{
   const [view, setView] = useState("edit")
   return(
     <div className="settings-container">
@@ -15,7 +15,8 @@ const Settings = (props)=>{
         <div className="left-settings">
           <div className="logo">
             <LogoDev/>
-            <h3>Musa</h3>
+            {/* {console.log({fromSetting: user})} */}
+            <h3>Name</h3>
           </div>
           <h3>Some account settings are moving</h3>
           <h3>Soon, Accounts Center will be the primary place to manage your account info and settings.</h3>
@@ -45,7 +46,7 @@ const Settings = (props)=>{
             <h4>Click on image to change profile picture</h4>
           </div>
           <div className="change">
-            {view === "edit" && <Edit user = {props.user}/>}
+            {view === "edit" && <Edit user = {user}/>}
             {view === "password" && <Password/>}
           </div>
         </div>

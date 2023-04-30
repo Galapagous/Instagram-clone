@@ -1,11 +1,11 @@
 import SideElement from "../SideElement/SideElement"
 import "./rightbar.scss"
 import Profile from "../Assets/profile.png"
-const RightBar = ()=>{
+const RightBar = ({user, auth})=>{
     return(
         <div className="rightbar">
             <div className="top">
-                <SideElement title = "Galapagous" img={Profile} mini = "Muhammed Musa"/>
+                <SideElement title = "Galapagous" img={user.avatar || Profile} mini = {user.Name}/>
                 <span>Switch</span>
             </div>
             <div className="section-break">
@@ -46,7 +46,7 @@ const RightBar = ()=>{
                         <li>Term</li>
                         <li>Location</li>
                         <li>Language</li>
-                        <li>Muh'd Musa</li>
+                        <li>{user.Name}</li>
                     </ul>
                 </div>
                 <div className="bottom-foot">
