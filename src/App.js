@@ -45,27 +45,27 @@ function App({ signOut, user }) {
     },
     {
       path: '/single/:id',
-      element: <SingleLayout><Single user={currUser}/></SingleLayout>,
+      element: <SingleLayout><Single /></SingleLayout>,
     },
     {
       path: '/single/explore',
-      element: <SingleLayout><Explore user={currUser}/></SingleLayout>,
+      element: <SingleLayout><Explore /></SingleLayout>,
     },
     {
       path: '/single/reel',
-      element: <SingleLayout><Reels user={currUser}/></SingleLayout>,
+      element: <SingleLayout><Reels /></SingleLayout>,
     },
     {
       path: '/single/message/:id',
-      element: <SingleLayout><Message user={currUser}/></SingleLayout>,
+      element: <SingleLayout><Message /></SingleLayout>,
     },
     {
       path: '/single/edit/:id',
-      element: <SingleLayout><Settings user = {user} auth = {authUser}/></SingleLayout>,
+      element: <SingleLayout><Settings /></SingleLayout>,
     },
     {
       path: '/single/create/:id',
-      element: <SingleLayout><Create user={currUser}/></SingleLayout>,
+      element: <SingleLayout><Create /></SingleLayout>,
     },
   ]);
 

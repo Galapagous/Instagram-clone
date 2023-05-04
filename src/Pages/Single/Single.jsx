@@ -11,8 +11,24 @@ import Post6 from "../../components/Assets/food.jpg"
 import Post7 from "../../components/Assets/food22.jpg"
 import { useState } from "react"
 import { Link } from "react-router-dom"
-const Single = ({user})=>{
+import { API, Auth, graphqlOperation } from "aws-amplify"
+import { usersByUserIdAndId } from "../../graphql/queries"
+import { useEffect } from "react"
+
+
+const Single = ()=>{
+    const [user, setCurrUser] = useState({})
+    const [auth, setAuthUser] = useState({})
     const [view, setView] = useState("Post")
+    useEffect(()=>{
+    const getUser = async ()=>{
+      const AuthUser =await Auth.currentAuthenticatedUser()
+      const savedUser = await API.graphql(graphqlOperation(usersByUserIdAndId, {userId: `${AuthUser.attributes.sub}`}))
+      setCurrUser(savedUser.data.usersByUserIdAndId.items[0])
+      setAuthUser(AuthUser)
+        }
+        getUser()
+    },[])
     return(
         <div className="container">
             <div className="top-area">
@@ -27,10 +43,9 @@ const Single = ({user})=>{
                         <MoreHorizRounded/>
                     </div>
                     <div className="level-two">
-                    {console.log(user)}
-                        <span>{user.posts.length || 0 } post</span>
-                        <span>{user.followers.length || 0 } followers</span>
-                        <span>{user.following.length || 0 } following</span>
+                        <span>0 post</span>
+                        <span>0 followers</span>
+                        <span>0 following</span>
                     </div>
                     <div className="level-three">
                         <h2>{user.Name}</h2>
@@ -53,7 +68,7 @@ const Single = ({user})=>{
                 <div className="bottom">
                 {view === "Post" && <div className="my-post">
                     <div className="posts">
-                    {user.post  ?
+                    {(!user.post === null)  ?
                     user.post.map((eachPost=>{
                         return(
                         <ProfileCard img={Post4} like = {eachPost.likes.length} comment ={eachPost.comment.length}/>
@@ -63,7 +78,7 @@ const Single = ({user})=>{
                 </div>}
                 {view === "Saved" && <div className="saved-post">
                     <div className="saved">
-                    {user.post  ?
+                    {(!user.savedPost === null)  ?
                     user.post.map((eachPost=>{
                         return(
                         <ProfileCard img={Post4} like = {eachPost.likes.length} comment ={eachPost.comment.length}/>
@@ -73,7 +88,7 @@ const Single = ({user})=>{
                 </div>}
                 {view === "Tagged" && <div className="tagged-post">
                     <div className="tagged">
-                    {user.taggedPost ? user.taggedPost.map((eachPost=>{
+                    {(!user.taggedPost === null) ? user.taggedPost.map((eachPost=>{
                             return(
                                 <ProfileCard img={Post4} like = {eachPost.likes.length} comment = {eachPost.comment.length}/>
                             )

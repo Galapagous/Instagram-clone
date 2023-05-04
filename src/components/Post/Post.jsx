@@ -6,7 +6,7 @@ import { Favorite, MapsUgc, MoreHorizRounded, BookmarkBorder, Send, Cancel, Emoj
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import InputField from "../InputField/InputField"
-const Post = ()=>{
+const Post = ({user})=>{
     const [moreOption, setMore] = useState(false)
     const [messageView, setMessageView] = useState(false)
     const handleShare = async()=>{
